@@ -77,7 +77,6 @@ with open(file_to_load) as election_data:
         county_votes[county_name] += 1
 
 
-print(county_list)
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
 
@@ -91,8 +90,6 @@ with open(file_to_save, "w") as txt_file:
     print(election_results, end="")
 
     txt_file.write(election_results)
-    txt_file.write("Oyuka")
-
 
     # 6a: Write a for loop to get the county from the county dictionary.
     for county_name in county_list:
@@ -112,16 +109,21 @@ with open(file_to_save, "w") as txt_file:
         txt_file.write(county_result)
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        # if (votes_c > largest_county) and (county_votes_percentage > winning_percentage):
-        #     winning_count = votes
-        #     winning_candidate = candidate_name
-        #     winning_percentage = vote_percentage
+        if (votes_c > county_count):
+            county_count = votes_c
+            largest_county = county_name
+       
 
 
     # 7: Print the county with the largest turnout to the terminal.
-    print(largest_county)
+    county_res = (
+        f"-------------------------\n"
+        f"Largest County Turnout: {largest_county}\n"
+        f"-------------------------\n\n")
+    print(county_res, end="")
 
     # 8: Save the county with the largest turnout to a text file.
+    txt_file.write(county_res)
 
 
 
@@ -141,7 +143,7 @@ with open(file_to_save, "w") as txt_file:
         txt_file.write(candidate_results)
 
         # Determine winning vote count, winning percentage, and candidate.
-        if (votes_c > county_count) and (vote_percentage > winning_percentage):
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
             winning_candidate = candidate_name
             winning_percentage = vote_percentage
