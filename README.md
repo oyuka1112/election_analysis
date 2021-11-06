@@ -25,4 +25,19 @@ The purpose of the election analysis is to find out which candidate has won the 
 * Winning Percentage: 73.8%
 
 ## Election Audit Summary
-[PyPoll_Challenge.py](https://github.com/oyuka1112/election_analysis/blob/main/PyPoll_Challenge.py)finds out that the 
+### Summary for the script
+[PyPoll_Challenge.py](https://github.com/oyuka1112/election_analysis/blob/main/PyPoll_Challenge.py) finds out that the following:
+- number of total votes
+- number of candidates
+- number of votes for each candidates
+- find out the percentage for each candidates (votes/total votes *100)
+- number of counties
+- number of votes per county
+- finds out the largest number of all the votes per county. In other words, largest voting county
+- finds oyt the biggest number of all candidates. In other words, find the winning candidate among all, find his/her percentage rate for winning, and the number of votes for winning.
+### Summary for how it can be used in a general by modifying the written code
+1. file_to_load = os.path.join("Resources",`"election_results.csv"`)
+    Instead of `election_results.csv` upload the election result file into your Resources, and use another election result. This would give you the analysis result for the particular file.
+2.  Instead of the `candidate_name = row[2]` and `county_name = row[1]`, depending on your file structure, you can change the row for candidate names and the county row. Therefore, you will be able to get all the correct info based on your file.
+
+
